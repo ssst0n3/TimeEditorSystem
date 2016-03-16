@@ -33,9 +33,9 @@ public class TEConfig extends JFinalConfig {
 	 * 配置路由
 	 */
 	public void configRoute(Routes me) {
-		me.add("/auth", IndexController.class);	// 第三个参数为该Controller的视图存放路径
+		me.add("/", IndexController.class, "/auth");	// 第三个参数为该Controller的视图存放路径
 		me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
-//		me.add("/auth", AuthController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/auth"
+		me.add("/auth", AuthController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/auth"
 
 	}
 	
@@ -54,7 +54,9 @@ public class TEConfig extends JFinalConfig {
 		// 配置ActiveRecord插件
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(C3p0Plugin);
 		me.add(arp);
-		
+		arp.setDevMode(true);
+        arp.setShowSql(true);
+        
 		// 所有配置在 MappingKit 中搞定
 		_MappingKit.mapping(arp);
 	}
