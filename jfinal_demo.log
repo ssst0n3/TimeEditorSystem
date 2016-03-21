@@ -1541,3 +1541,12 @@ java.lang.NullPointerException
 
 2016-03-15 13:56:34
 [WARN]-[Thread: qtp553264065-20]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /cgi-bin/micromsg-bin/getcdndns
+
+2016-03-18 20:08:31
+[WARN]-[Thread: qtp553264065-22]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /cgi-bin/micromsg-bin/newsync
+
+2016-03-18 20:08:54
+[WARN]-[Thread: qtp553264065-20]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /cgi-bin/micromsg-bin/newsync
+
+2016-03-18 20:08:54
+[WARN]-[Thread: qtp553264065-21]-[com.jfinal.core.ActionHandler.handle()]: 404 Action Not Found: /cgi-bin/micromsg-bin/statusnotify
