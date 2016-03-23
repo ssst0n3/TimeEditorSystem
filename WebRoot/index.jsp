@@ -21,7 +21,7 @@
       <td class="date">1</td>
       <td class="date">周五</td>
       <td title="任务">
-        <p id="task1">值班</p>
+        <input id="task1" name="task1" value="值班"></input>
         <p id="task2">Time Editor System 修改</p>
         <p id="task3">ASIR 修改</p>
         <p id="task4">ASIR 修改</p>
