@@ -1,0 +1,19 @@
+body {
+   /*无边距*/
+     margin:0px;
+    padding:0px;
+    /*字体大小*/
+    font-size:16px;
+
+}
+ /*表格样式*/
+table,tr,td,th {
+
+    border:1px solid #A3A3A3;
+    border-collapse:collapse;
+    background-color:#E4E4E4;
+}
+td {
+    width:200px;
+    height:30px;
+  

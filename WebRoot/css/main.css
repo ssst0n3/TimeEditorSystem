@@ -45,7 +45,6 @@ table {
 p {
   margin-left: 5px;
 }
-p time,
-thing {
+p time,thing {
   display: inline-block;
 }
