@@ -7,11 +7,9 @@ import com.jfinal.core.Controller;
  */
 public class IndexController extends Controller {
 	public void index() {
-		render("login.html");
+		render("index.jsp");
+	}
+	public void login() {
+		render("auth/login.html");
 	}
 }
-
-
-
-
-

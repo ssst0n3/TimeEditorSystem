@@ -2,6 +2,7 @@ package com.time_editor.auth;
 
 import com.jfinal.core.Controller;
 import com.time_editor.common.model.User;
+import com.time_editor.index.IndexController;
 
 public class AuthController extends Controller{
 	public void index() {
@@ -24,7 +25,7 @@ public class AuthController extends Controller{
         }
         if(user.findByUsername(username).get("password").equals(password)){
         	message = "密码正确";
-        	render("/index.html");
+        	render("/index.jsp");
         }
 	}
 }

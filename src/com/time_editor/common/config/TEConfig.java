@@ -7,6 +7,7 @@ import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.core.JFinal;
+import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
@@ -14,6 +15,7 @@ import com.time_editor.auth.AuthController;
 import com.time_editor.blog.BlogController;
 import com.time_editor.common.model._MappingKit;
 import com.time_editor.index.IndexController;
+import com.time_editor.save.SaveController;
 
 /**
  * API引导式配置
@@ -33,7 +35,8 @@ public class TEConfig extends JFinalConfig {
 	 * 配置路由
 	 */
 	public void configRoute(Routes me) {
-		me.add("/", IndexController.class, "/auth");	// 第三个参数为该Controller的视图存放路径
+		me.add("/", IndexController.class);	// 第三个参数为该Controller的视图存放路径
+		me.add("/save", SaveController.class);	// 第三个参数为该Controller的视图存放路径
 		me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
 		me.add("/auth", AuthController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/auth"
 
@@ -72,7 +75,8 @@ public class TEConfig extends JFinalConfig {
 	 * 配置处理器
 	 */
 	public void configHandler(Handlers me) {
-		
+		// TODO Auto-generated method stub
+		me.add(new ContextPathHandler("contextPath"));
 	}
 	
 	/**
