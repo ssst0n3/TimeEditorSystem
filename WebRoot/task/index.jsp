@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html;  charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE HTML>
 <html>
-<head>
+<head> 
   <title>2016.3</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -10,7 +12,6 @@
   <script src="js/editTable.js" type="text/javascript"></script>
 </head>
 <body>
-<c:forEach items="${objectlist.list}" var="obj" varStatus="status">
 <form  action="${contextPath}/task/save" method="post">
   <button>保存</button>
   <table  class="mar_table">
@@ -23,7 +24,7 @@
       <td class="date">1</td>
       <td class="date">周五</td>
       <td title="任务">
-        <input id="task1" name="task1" value="${objectlist.content}"></input >
+        <input id="task1" name="task1" value="${object.content}"></input >
         <p id="task2">Time Editor System 修改</p>
         <p id="task3">ASIR 修改</p>
         <p id="task4">ASIR 修改</p>
@@ -302,6 +303,5 @@
         </tr>
   </table>
 </form>
-</c:forEach>
 </body>
 </html>

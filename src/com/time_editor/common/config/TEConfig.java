@@ -10,12 +10,14 @@ import com.jfinal.core.JFinal;
 import com.jfinal.ext.handler.ContextPathHandler;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.jfinal.plugin.activerecord.ModelRecordElResolver;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.jfinal.render.ViewType;
 import com.time_editor.auth.AuthController;
 import com.time_editor.blog.BlogController;
 import com.time_editor.common.model._MappingKit;
 import com.time_editor.index.IndexController;
-import com.time_editor.save.SaveController;
+import com.time_editor.task.TaskController;
 
 /**
  * API引导式配置
@@ -28,6 +30,7 @@ public class TEConfig extends JFinalConfig {
 	public void configConstant(Constants me) {
 		// 加载少量必要配置，随后可用PropKit.get(...)获取值
 		PropKit.use("a_little_config.txt");
+		me.setViewType(ViewType.JSP);
 		me.setDevMode(PropKit.getBoolean("devMode", false));
 	}
 	
@@ -36,7 +39,7 @@ public class TEConfig extends JFinalConfig {
 	 */
 	public void configRoute(Routes me) {
 		me.add("/", IndexController.class);	// 第三个参数为该Controller的视图存放路径
-		me.add("/save", SaveController.class);	// 第三个参数为该Controller的视图存放路径
+		me.add("/task", TaskController.class);	// 第三个参数为该Controller的视图存放路径
 		me.add("/blog", BlogController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/blog"
 		me.add("/auth", AuthController.class);			// 第三个参数省略时默认与第一个参数值相同，在此即为 "/auth"
 
