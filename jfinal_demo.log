@@ -230,3 +230,11 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 
 	at com.time_editor.task.TaskController.index(TaskController.java:9)
 	... 31 more
+
+2016-03-24 10:06:50
+[ERROR]-[Thread: main]-[com.jfinal.kit.LogKit.error()]: port: 8080 already in use!
+java.lang.IllegalStateException: port: 8080 already in use!
+	at com.jfinal.server.JettyServer.doStart(JettyServer.java:79)
+	at com.jfinal.server.JettyServer.start(JettyServer.java:65)
+	at com.jfinal.core.JFinal.start(JFinal.java:154)
+	at com.time_editor.common.config.TEConfig.main(TEConfig.java:90)

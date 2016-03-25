@@ -17,4 +17,17 @@ public class TaskController extends Controller {
 		Save.me.saveTask(task);
 		render("save.jsp");
 	}
+	
+	public void load() {
+//		header( 'Content-Type: application/json' );
+//			$data = array(
+//				array('Carbon','Hydrogen','Nitrogen','Oxygen'),
+//				array(10,15,1,0),
+//				array(8,11,1,2),
+//				array(10,15,1,1),
+//				array(12,17,1,1),
+//				array(14,19,1,2)
+//			);
+//		json_encode( $data );
+	}
 }

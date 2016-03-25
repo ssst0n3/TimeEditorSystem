@@ -184,12 +184,86 @@ if (isset($_REQUEST['ajax']) ){
 
   <div class="container">
                  
+    <h1>jQuery editTable <span>v0.2.0</span></h1>
     
+    <a href="https://twitter.com/micc1983" class="twitter-follow-button" data-show-count="true" data-lang="en">Follow @micc1983</a>
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="Micc1983">Tweet</a>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                         
+    <p>jQuery editTable is a very small jQuery Plugin (~1Kb gzipped) that fill the gap left by the missing of a default <strong>input field for data tables</strong>. jQuery editTable can be used both in ajax and/or HTTP POST contest and let you preset the title and number of columns or just let complete freedom to the user. You can even append custom behaviors to single column cells (ex. <strong>jQuery UI Datepicker</strong>). The only limit is your imagination! :)</p>
+                         
+    <a href="https://github.com/micc83/editTable" class="download_button">Download it on GitHub</a>
 	
+	<p>To use it you just have to include jQuery and a copy of the plugin in your head or footer:</p>
+<pre>
+&#x3C;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x20;&#x74;&#x79;&#x70;&#x65;&#x3D;&#x22;&#x74;&#x65;&#x78;&#x74;&#x2F;&#x6A;&#x61;&#x76;&#x61;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x22;&#x20;&#x73;&#x72;&#x63;&#x3D;&#x22;&#x68;&#x74;&#x74;&#x70;&#x3A;&#x2F;&#x2F;&#x63;&#x6F;&#x64;&#x65;&#x2E;&#x6A;&#x71;&#x75;&#x65;&#x72;&#x79;&#x2E;&#x63;&#x6F;&#x6D;&#x2F;&#x6A;&#x71;&#x75;&#x65;&#x72;&#x79;&#x2D;&#x6C;&#x61;&#x74;&#x65;&#x73;&#x74;&#x2E;&#x6A;&#x73;&#x22;&#x3E;&#x3C;&#x2F;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x3E;
+&#x3C;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x20;&#x74;&#x79;&#x70;&#x65;&#x3D;&#x22;&#x74;&#x65;&#x78;&#x74;&#x2F;&#x6A;&#x61;&#x76;&#x61;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x22;&#x20;&#x73;&#x72;&#x63;&#x3D;&#x22;&#x6A;&#x71;&#x75;&#x65;&#x72;&#x79;&#x2E;&#x65;&#x64;&#x69;&#x74;&#x74;&#x61;&#x62;&#x6C;&#x65;&#x2E;&#x6D;&#x69;&#x6E;&#x2E;&#x6A;&#x73;&#x22;&#x3E;&#x3C;&#x2F;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x3E;
+&#x3C;&#x6C;&#x69;&#x6E;&#x6B;&#x20;&#x72;&#x65;&#x6C;&#x3D;&#x22;&#x73;&#x74;&#x79;&#x6C;&#x65;&#x73;&#x68;&#x65;&#x65;&#x74;&#x22;&#x20;&#x68;&#x72;&#x65;&#x66;&#x3D;&#x22;&#x6A;&#x71;&#x75;&#x65;&#x72;&#x79;&#x2E;&#x65;&#x64;&#x69;&#x74;&#x74;&#x61;&#x62;&#x6C;&#x65;&#x2E;&#x6D;&#x69;&#x6E;&#x2E;&#x63;&#x73;&#x73;&#x22;&#x3E;
+</pre>
 	
+	<p>Now you can trigger editTable on any textarea or block element (ex. div, article, section ...). In case you trigger it on a textarea, its content will be used as JSON source for the table. If the textarea is inside a form, on submit, its content will be updated with the new JSON data. Otherwise, if you trigger it on a block element the table will be appended to the element itself (ajax).</p>
+	
+	<pre>
+var mytable = $('#edittable').editTable({
+    data: [['']],           // Fill the table with a js array (this is overridden by the textarea content if not empty)
+    tableClass: 'inputtable',   // Table class, for styling
+    jsonData: false,        // Fill the table with json data (this will override data property)
+    headerCols: false,      // Fix columns number and names (array of column names)
+    maxRows: 999,           // Max number of rows which can be added
+    first_row: true,        // First row should be highlighted?
+    row_template: false,    // An array of column types set in field_templates
+    field_templates: false, // An array of custom field type objects
+
+    // Validate fields
+    validate_field: function (col_id, value, col_type, $element) {
+        return true;
+    }
+});
+</pre>
+	
+	<p>There are of course many methods which can be used on the created table. Let's see...</p>
+	
+	<pre>
+mytable.loadData(dataArray);    // Fill the table with js data
+mytable.loadJsonData(jsonData); // Fill the table with JSON data
+mytable.getData();              // Get a js array of the table data
+mytable.getJsonData();          // Get JSON from the table data
+mytable.reset();                // Reset the table to the initial set of data
+mytable.isValidated()           // Check if the table pass validation set with validate_field
+</pre>
+	
+	<p>To define a <strong>custom field type</strong> object (<a href="#e4">click here for a full example</a>):</p>
+    <pre>
+[
+    'checkbox' : {
+        
+        html: '&lt;input type="checkbox"/&gt;',     // Input type html
+
+        // How to get the value from the custom input
+        getValue: function (input) {
+            return $(input).is(':checked');
+        },
+
+        // How to set the value of the custom input
+        setValue: function (input, value) {
+            if ( value ){
+                return $(input).attr('checked', true);
+            }
+            return $(input).removeAttr('checked');
+        }
+    }
+]
+</pre>
+
+	<p>That's it, now give a look to the following examples to understand how it works.</p>
+	
+	<hr>
 	
 	<h3>Example 1 - Basics</h3>
-		
+	
+	<p>In the first example we'll implement the simplest HTML POST use of editTable. If you are looking to use editTable on ajax contest instead just give a look to the next example.</p>
+	
 	<form method="post" action="#output">
 		<textarea id="source" style="display: none;" name="myField"><?php 
 		echo json_encode(array(
