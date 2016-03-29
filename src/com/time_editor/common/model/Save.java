@@ -6,7 +6,7 @@ import com.time_editor.common.model.base.BaseSave;
 public class Save extends BaseSave<Save> {
 	public static final Save me = new Save();
 	
-	public void saveTask(String task) {
-		setTask(task);
+	public void saveTask(Integer id, String task) {
+		setTask(id, task);
 	}
 }

@@ -14,7 +14,7 @@ public class TaskController extends Controller {
 	public void save(){
 		System.out.println("save function in taskController");
 		String task = getPara("task1");
-		Save.me.saveTask(task);
+		Save.me.saveTask(1,task);
 		render("save.jsp");
 	}
 	

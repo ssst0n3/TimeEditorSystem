@@ -10,7 +10,7 @@ import com.time_editor.common.model.Task;
 @SuppressWarnings("serial")
 public abstract class BaseSave<M extends BaseSave<M>> extends Model<M> implements IBean {
 
-	public void setTask(String task) {
-		Task.me.findById(1).set("content",task).update();
+	public void setTask(Integer id, String task) {
+		Task.me.findById(id).set("content",task).update();
 	}
 }

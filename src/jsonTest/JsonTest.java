@@ -1,9 +1,15 @@
 package jsonTest;
 
+import java.util.List;
+
 import org.eclipse.jetty.server.ssl.SslCertificates;
 
 import com.google.gson.Gson;
 import com.jfinal.json.Json;
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.render.Render;
+import com.time_editor.common.model.Task;
 
 public class JsonTest {
 	public static void main(String[] args) {
@@ -48,19 +54,12 @@ public class JsonTest {
 //		System.out.print(ints2);
 	}
 
-
-
-
-
-
-
-
-
 }
 
 class BagOfPrimitives {
-	private String task1 = "abc";
-	private String task2 = "def";
+//	private String task1 = "ASIR修改";
+	private String task2 = "Time Editor System 修改";
+	Record task1 = Db.findFirst("SELECT content FROM task WHERE id='task1'");
 	BagOfPrimitives() {
 	  // no-args constructor
 	}
