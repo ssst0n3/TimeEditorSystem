@@ -7,23 +7,16 @@
   <title>2016.3</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <%-- <link rel="stylesheet" type="text/css" href="/css/jquery.edittable.css" /> --%>
   <script src="/js/less-1.7.0.js"></script>
   <script src="/js/jquery-1.12.1.js" type="text/javascript"></script>
   <script src="/js/editTable.js" type="text/javascript"></script>
-<script language="javascript" >
-	$.getJSON("/myDemo/load",function(result){
-	    console.log(result);
-	    $.each(result, function(i,content){	      
-	      console.log(content.content);
-	      $("#task input:eq("+i+")").attr("value",content.content);
-	    });
-	  });
-</script>
 </head>
 <body>
+<button id="button_test">post</button>
 <form  action="${contextPath}/task/save" method="post">
   <button>保存</button>
-  <table  class="mar_table">
+  <table  class="mar_table edittable">
     <tr class="title mar_title">
       <th class="title_month" colspan="2">Apr</th>
       <th class="title_abstract" colspan="5">CTF's month</th>
@@ -34,8 +27,8 @@
       <td class="date">周五</td>
       <td id="task" title="任务">
         <input id="task1" name="task1" value=""></input>
-		<input id="task2" name="task2" value=""></input>
-		<input id="task2" name="task2" value=""></input>
+    		<input id="task2" name="task2" value=""></input>
+    		<input id="task2" name="task2" value=""></input>
       </td>
       <td title="上午">
         <p>

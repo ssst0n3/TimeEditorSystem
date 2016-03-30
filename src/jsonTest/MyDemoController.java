@@ -2,6 +2,7 @@ package jsonTest;
 
 import java.util.List;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.jfinal.core.Controller;
 import com.jfinal.plugin.activerecord.Db;
@@ -22,5 +23,8 @@ public class MyDemoController extends Controller {
 		List<Task> task1 = Task.me.find("SELECT * FROM task");
 		renderJson(task1);
 	}
-
+	public void save() {
+		setAttr("s", "s");
+		renderJson();
+	}
 }

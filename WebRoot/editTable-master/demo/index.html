@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>jQuery editTable</title>
+  <script src="//code.jquery.com/jquery-latest.js"></script>
+  <!-- <script type="text/javascript" src="../jquery.edittable.js"></script> -->
+  <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link rel="stylesheet" href="../jquery.edittable.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+<form method="post" action="#output">
+		<textarea id="source" style="display: none;" name="myField">
+      [["Period","Full Board","Half Board","Bed &amp; Breakfast"],
+        ["01\/01 - 31\/01","50.00 \u20ac","40.00 \u20ac","30.00 \u20ac"],
+        ["01\/02 - 28\/02","55.00 \u20ac","45.00 \u20ac","35.00 \u20ac"],
+        ["01\/03 - 31\/03","60.00 \u20ac","50.00 \u20ac","40.00 \u20ac"],
+        ["01\/04 - 30\/04","55.00 \u20ac","45.00 \u20ac","35.00 \u20ac"],
+        ["01\/05 - 31\/05","50.00 \u20ac","40.00 \u20ac","30.00 \u20ac"]
+      ]
+    </textarea>
+    <table class="inputtable wh">
+      <thead>
+        <tr>
+          <th>
+            <a class="addcol icon-button" href="#">+</a>
+            <a class="delcol icon-button" href="#">-</a>
+          </th>
+          <th>
+            <a class="addcol icon-button" href="#">+</a>
+            <a class="delcol icon-button" href="#">-</a>
+          </th>
+          <th>
+            <a class="addcol icon-button" href="#">+</a>
+            <a class="delcol icon-button" href="#">-</a>
+          </th>
+          <th>
+            <a class="addcol icon-button" href="#">+</a>
+            <a class="delcol icon-button" href="#">-</a>
+          </th>
+          <th>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="text" value="Period">
+          </td>
+          <td>
+            <input type="text" value="Full Board">
+          </td>
+          <td>
+            <input type="text" value="Half Board">
+          </td>
+          <td>
+            <input type="text" value="Bed &amp; Breakfast">
+          </td>
+          <td>
+            <a class="addrow icon-button" href="#">+</a>
+            <a class="delrow icon-button" href="#">-</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" value="01/01 - 31/01">
+          </td>
+          <td>
+            <input type="text" value="50.00 €">
+          </td>
+          <td>
+            <input type="text" value="40.00 €">
+          </td>
+          <td>
+            <input type="text" value="30.00 €">
+          </td>
+          <td>
+            <a class="addrow icon-button" href="#">+</a>
+            <a class="delrow icon-button" href="#">-</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" value="01/02 - 28/02">
+          </td>
+          <td>
+            <input type="text" value="55.00 €">
+          </td>
+          <td>
+            <input type="text" value="45.00 €">
+          </td>
+          <td>
+            <input type="text" value="35.00 €">
+          </td>
+          <td>
+            <a class="addrow icon-button" href="#">+</a>
+            <a class="delrow icon-button" href="#">-</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" value="01/03 - 31/03">
+          </td>
+          <td>
+            <input type="text" value="60.00 €">
+          </td>
+          <td>
+            <input type="text" value="50.00 €">
+          </td>
+          <td>
+            <input type="text" value="40.00 €">
+          </td>
+          <td>
+            <a class="addrow icon-button" href="#">+</a>
+            <a class="delrow icon-button" href="#">-</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" value="01/04 - 30/04">
+          </td>
+          <td>
+            <input type="text" value="55.00 €">
+          </td>
+          <td>
+            <input type="text" value="45.00 €">
+          </td>
+          <td>
+            <input type="text" value="35.00 €">
+          </td>
+          <td>
+            <a class="addrow icon-button" href="#">+</a>
+            <a class="delrow icon-button" href="#">-</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" value="01/05 - 31/05">
+          </td>
+          <td>
+            <input type="text" value="50.00 €">
+          </td>
+          <td>
+            <input type="text" value="40.00 €">
+          </td>
+          <td>
+            <input type="text" value="30.00 €">
+          </td>
+          <td>
+            <a class="addrow icon-button" href="#">+</a>
+            <a class="delrow icon-button" href="#">-</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+		<button type="submit">Post data (will reload the page)</button>
+		<a href="#example0code" class="showcode button">Show Code</a>
+	</form>
+</body>

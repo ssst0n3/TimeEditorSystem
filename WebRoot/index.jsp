@@ -8,6 +8,8 @@
   <script src="/js/less-1.7.0.js"></script>
   <script src="/js/jquery-1.12.1.js" type="text/javascript"></script>
   <script src="/js/editTable.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="../.css" />
+
 </head>
 <body>
 <c:forEach items="${objectlist.list}" var="obj" varStatus="status">

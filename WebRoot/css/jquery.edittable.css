@@ -5,28 +5,6 @@ table.inputtable {
 	-webkit-box-shadow:0 1px 3px rgba(0,0,0,.075);
 	box-shadow:0 1px 3px rgba(0,0,0,.075)
 }
-/* Buttons */
-table.inputtable a.icon-button {
-	background-color: #ccc;display: inline-block;width: 18px;height: 18px;text-decoration: none;color: #fff;font-weight: 800;line-height: 16px;text-align: center;font-size: 14px;
-	-moz-border-radius: 1px;
-	-webkit-border-radius: 1px;
-	border-radius: 1px;
-	-moz-box-shadow: 0 0 1px rgba(0,0,0,0.2);
-	-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.2);
-	box-shadow: 0 0 1px rgba(0,0,0,0.2);
-}
-/* Add Buttons */
-table.inputtable a.icon-button.addcol, table.inputtable a.icon-button.addrow {
-	background-color: #81b71a;
-}
-/* Remove Buttons */
-table.inputtable a.icon-button.delcol, table.inputtable a.icon-button.delrow {
-	background-color: #db4a39;
-}
-/* Disabled Buttons */
-table.inputtable a.icon-button.disabled {
-	background-color: #eee;
-}
 /* Row last cel */
 table.inputtable td:last-child, table.inputtable th:last-child{
 	background-color: #f8f8f8;width: 54px;border: none;
@@ -61,16 +39,12 @@ table.inputtable th:first-child, table.inputtable td:first-child {
 table.inputtable tr:last-child td {
     border-bottom:none;
 }
+
 /* Mobile Landscape */
-@media only screen and (max-width : 480px) { 
+@media only screen and (max-width : 480px) {
 	/* Table single cells */
 	table.inputtable td, table.inputtable th {
 		min-width: 40px;height: 80px;
-	}
-	/* Buttons */
-	table.inputtable a.icon-button {
-		width: 40px;height: 40px;font-size: 18px;min-width: 40px;line-height: 40px;
-		margin: 3px 0;
 	}
 	/* Table body inputs */
 	table.inputtable td input {

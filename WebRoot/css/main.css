@@ -1,8 +1,14 @@
 @charset "utf-8";
+/*common*/
 table {
   width: 1000px;
   border-spacing: 0px;
 }
+td{
+  padding-left: 5px;
+}
+
+/*month css*/
 .mar_title {
   background-color: #008000;
 }
@@ -19,11 +25,11 @@ table {
   height: 80px;
 }
 .title_month {
-  width: 12%;
+  width: 10%;
   font-size: 34px;
 }
 .title_abstract {
-  width: 88%;
+  width: 90%;
   font-size: 26px;
 }
 .date {
@@ -42,9 +48,24 @@ table {
   font-style: italic;
   font-family: cursive;
 }
-p {
-  margin-left: 5px;
-}
 p time,thing {
   display: inline-block;
+}
+
+
+/* edittable */
+table.edittable input{
+  border: 0;
+  display: block;
+  margin-bottom: 1em;
+}
+
+
+
+/* Mobile Landscape */
+@media only screen and (max-width : 480px) {
+	/* Table single cells */
+	table.edittable td, table.edittable th {
+		min-width: 40px;height: 80px;
+	}
 }
