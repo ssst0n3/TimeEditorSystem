@@ -2,11 +2,8 @@ package jsonTest;
 
 import java.util.List;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.jfinal.core.Controller;
-import com.jfinal.plugin.activerecord.Db;
-import com.jfinal.plugin.activerecord.Record;
+import com.time_editor.common.model.Save;
 import com.time_editor.common.model.Task;
 
 public class MyDemoController extends Controller {
@@ -14,17 +11,15 @@ public class MyDemoController extends Controller {
 		
 	}
 	public void load() {
-		// TODO Auto-generated method stub
-//		String s = JsonTest.jsonLoad();
-//		System.out.print(s+"MyDemoController");
-//		setAttr("jsonload", s);
-		
-//		
 		List<Task> task1 = Task.me.find("SELECT * FROM task");
 		renderJson(task1);
 	}
 	public void save() {
-		setAttr("s", "s");
+		System.out.print(getPara("id")+" "+getPara("value"));
+		int id = Integer.parseInt(getPara("id"));
+		String value = getPara("value");
+		Save.me.saveTask(id, value);
+		setAttr("success", "success!");
 		renderJson();
 	}
 }

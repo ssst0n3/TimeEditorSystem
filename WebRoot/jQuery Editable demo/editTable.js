@@ -20,7 +20,6 @@ $(function () {
         //去掉文本框的外边距
         inputObj.css("margin", 0);
         inputObj.css("padding", 0);
-        inputObj.css("text-align", "center");
         inputObj.css("font-size", "16px");
         inputObj.css("background-color", tdObj.css("background-color"));
         //把文本框放到td中
